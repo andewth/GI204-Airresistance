@@ -307,7 +307,7 @@ Rigidbody:
   m_GameObject: {fileID: 395038887}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 10
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -342,6 +342,9 @@ MonoBehaviour:
   liftBooster: 0.4
   drag: 0.001
   angularDrag: 0.001
+  yawPower: 50
+  pitchPower: 20
+  rollPower: 0.001
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,6 +629,9 @@ MonoBehaviour:
   liftBooster: 0.5
   drag: 0.001
   angularDrag: 0.001
+  yawPower: 50
+  pitchPower: 20
+  rollPower: 0.001
 --- !u!54 &1022406645
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -754,7 +760,7 @@ Rigidbody:
   m_GameObject: {fileID: 1419137531}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 10
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -789,6 +795,9 @@ MonoBehaviour:
   liftBooster: 0.4
   drag: 0.001
   angularDrag: 0.001
+  yawPower: 50
+  pitchPower: 20
+  rollPower: 0.001
 --- !u!1001 &1639615706
 PrefabInstance:
   m_ObjectHideFlags: 0

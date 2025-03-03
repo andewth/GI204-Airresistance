@@ -9,16 +9,12 @@ public class Airplane : MonoBehaviour
     [SerializeField] float liftBooster = 0.4f;
     [SerializeField] float drag = 0.001f;
     [SerializeField] float angularDrag = 0.001f;
+    
+    [SerializeField] float yawPower = 50f;  // หมุนซ้าย/ขวา
+    [SerializeField] float pitchPower = 50f; // หมุนขึ้น/ลง
+    [SerializeField] float rollPower = 20f;  // หมุนในแนวนอน
 
 
-    [SerializeField] float yawPower = 50f;
-    [SerializeField] float pitchPower = 20f;
-    [SerializeField] float rollPower = 0.001f;
-    private float yaw = Input.GetAxis("Horizontal") * yawPower;
-    private float pitch = Input.GetAxis("Vertical") * pitchPower;
-    private float roll = Input.GetAxis("Roll") * rollPower;
-    
-    
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -34,8 +30,13 @@ public class Airplane : MonoBehaviour
             rb.linearDamping = rb.linearVelocity.magnitude * drag;
             rb.angularDamping = rb.linearVelocity.magnitude * angularDrag;
             
+            float yaw = Input.GetAxis("Horizontal") * yawPower;
+            float pitch = Input.GetAxis("Vertical") * pitchPower;
+            float roll = Input.GetAxis("Roll") * rollPower;
             
-            
+            rb.AddTorque(transform.up * yaw);
+            rb.AddTorque(transform.right * pitch);
+            rb.AddTorque(transform.forward * roll);
         }
     }
 }
